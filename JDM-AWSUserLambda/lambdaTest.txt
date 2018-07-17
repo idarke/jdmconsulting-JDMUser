@@ -1,0 +1,29 @@
+Use this json to test the lambda from within the AWS console:
+
+{"handler": "APPS", "action": "GETALLAPPS"}
+
+It should return an array of apps:
+[
+  {
+    "id": 1,
+    "name": "RPM"
+  },
+  {
+    "id": 2,
+    "name": "KATT Testing Tool"
+  }
+]
+
+Try this:
+{"handler": "APPS", "action": "GETAPP", "params": "%7B%22id%22%3A2%7D"}
+
+You should get this:
+{
+  "body": "{\"id\":2,\"name\":\"KATT Testing Tool\"}"
+}
+
+
+
+
+
+

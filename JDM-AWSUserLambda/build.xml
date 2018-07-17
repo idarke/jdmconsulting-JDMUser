@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- If you are not deploying with the eclipse AWS plugin, this build will
+     create a zip file that can be deployed manually as an AWS Lambda.
+     The first time you do this, you must define the Lambda first in AWS as a blank
+     lambda template and specific the fully qualified handler class name. -->
+	
+<project basedir="." default="zipForDeployToAWS" name="JDM-AWSUserLambda">
+	
+	<property name="dist.dir" value="dist" />
+	<property name="zipname" value="JDM-AWSUserLambda.zip" />
+	
+   <property name="include.dir1" value="bin" />
+	<property name="include.dir2" value="lib" />
+	
+   <target name="zipForDeployToAWS">
+   	<zip destfile="${dist.dir}/${zipname}">
+   		
+         <!-- Compiled files from this project -->
+         <zipfileset dir="${include.dir1}" includes="**"></zipfileset>
+   		
+         <!-- lib jar files from this project -->
+         <zipfileset dir="${include.dir2}" prefix="lib" includes="**"></zipfileset>
+   		
+         <!-- Compiled files from common JDMLib project -->
+         <zipfileset dir="../../JDMLib/${include.dir1}" includes="**"></zipfileset>
+   		
+   	</zip>
+   </target>
+	
+</project>

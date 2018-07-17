@@ -1,0 +1,461 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body
+{
+   font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+.headerdiv
+{
+   width: 100%;
+   height: 50px;
+}
+
+.headerdiv .jdmlogo
+{
+   position: absolute;
+   top: 10px;
+   right: 10px;
+}
+
+.headerdiv .fcalogo
+{
+   position: absolute;
+   top: 12px;
+   left: 10px;
+}
+
+.headerdiv .title
+{
+   position: absolute;
+   top: 18px;
+   left: 144px;
+   font-style: italic;
+}
+
+.title
+{
+   font-size: 2.5em;
+   font-weight: bold;
+   color: maroon;  /* #0000A0; */
+   position: absolute;
+   top: 12px;
+   left: 10px;
+   white-space:nowrap;
+}
+
+.footerdiv 
+{
+   width:100%; 
+   height:50px; 
+   position: absolute;
+   bottom: 0;
+   left: 0;
+}
+
+.maindiv 
+{
+   position: relative;
+   overflow: hidden;
+   height: 80%;
+   padding-top: 10px;
+}
+
+.maindiv table 
+{
+    padding: 15px;
+    position: relative;
+    width: 98%;
+    z-index: 2;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: 6px solid #b22222;
+    border-radius: 13px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.maindiv table .headercellMiddle
+{
+    border-right: 1px solid #b22222;
+    border-bottom: 2px solid #b22222;
+}
+
+.maindiv table .cellMiddle
+{
+    border-right: 1px solid #b22222;
+    border-bottom: 1px solid #b22222;
+}
+
+.maindiv table .headercellEnd
+{
+    border-bottom: 2px solid #b22222;
+}
+
+.maindiv table .cellEnd
+{
+    border-bottom: 1px solid #b22222;
+}
+
+.maindiv table .headerRow
+{
+   color: #0000A0;
+}
+
+.logindiv 
+{
+   position: absolute;
+   width: 200px;
+   height: 200px;
+   top: 28%;
+   left: 30%;
+}
+
+.logindiv table 
+{
+    padding: 15px;
+    position: relative;
+    width: 30%;
+    z-index: 100;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: 6px solid #b22222;
+    border-radius: 13px; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    background-color: white;
+}
+
+.logindiv table .headerRow
+{
+   color: #0000A0;
+}
+
+.greyscreen
+{
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   left: 0;
+   top: 0;
+   z-index: 90;
+   background-image: url(../images/greyscreen.png);
+   opacity: .6;
+   display: none;
+}
+
+.backgroundImg  
+{
+    position: absolute;
+    left: 0;
+    top: 60px;
+    width: 100%;
+    height: auto;
+    opacity: 0.05;
+}
+
+.largeButton
+{
+   font-size: 1.3em;
+}
+
+.mediumButton
+{
+   font-size: .8em;
+}
+
+
+
+.menu
+{
+   vertical-align: top;
+   border: none;
+}
+
+.lightBlueButton
+{
+   background-color: lightblue;
+   border-radius: 8px;
+   margin-right: 10px;      
+}
+.lightBlueButton:focus {
+  outline: none;
+}
+
+.redButton
+{
+   background-color: LavenderBlush;
+   border-radius: 8px;
+   margin-right: 10px;   
+}
+.redButton:focus {
+  outline: none;
+}
+
+.cyanButton
+{
+   background-color: LightCyan;
+   border-radius: 8px;
+   margin-right: 10px;    
+}
+.cyanButton:focus {
+  outline: none;
+}
+
+.greenButton
+{
+   background-color:lightgreen;
+   border-radius: 8px;   
+}
+.greenButton:focus {
+  outline: none;
+}
+
+.blueButton
+{
+   background-color: lightblue;
+   border-radius: 8px;
+   margin-right: 10px;
+}
+.blueButton:focus {
+  outline: none;
+}
+
+.darkBlueButton
+{
+   background-color: darkblue;
+   color: white;
+   border-radius: 8px;
+   margin-right: 10px;      
+}
+.darkBlueButton:focus {
+  outline: none;
+}
+
+.tableInputText
+{
+   width: 300px
+}
+
+.tableInputTextTiny
+{
+   width: 30px
+}
+
+.tableInputTextSmall
+{
+   width: 100px
+}
+
+.tableInputTextLarge
+{
+   width: 900px
+}
+
+.tableInputTextAreaLarge
+{
+   width: 900px; 
+   height: 70px;
+}
+
+.testTree
+{
+   overflow:hidden;
+   height:150%;
+   width:103%;
+}
+
+.messagediv 
+{
+   width:100%; 
+   height:auto; 
+   padding-top: 30px;
+}
+
+.errorMessages 
+{
+   text-align: center;
+   font-size: 1.3em;
+   font-weight: bold;
+   color: red;
+   display: none;
+   padding-top: 10px;
+   width:100%; 
+   height: auto;
+}
+   
+.niceMessages 
+{
+   text-align: center;
+   font-size: 1.3em;
+   font-weight: bold;
+   color: green;
+   display: none;
+   padding-top: 10px;
+   width:100%; 
+   height: auto;
+}
+
+.goDiv
+{
+   text-align: center;
+   width: 100%;
+   padding-top: 4px;
+   padding-bottom: 4px;
+}
+
+.statusBar
+{
+   -webkit-appearance: none;
+   appearance: none;
+   border: none;
+   height: 20px;
+   width: 160px;
+   background-color: red; 
+   color: green;
+}
+
+.statusBarText
+{
+   font-size: 1em;
+   margin-left: 10px;
+   color: green;
+   vertical-align: top;
+}
+
+.statusBarErrorText
+{
+   font-size: 1em;
+   margin-left: 10px;
+   color: red;
+   vertical-align: top;
+}
+
+.nowrapSpan
+{
+   white-space:nowrap;
+}
+
+input[type=radio]+label {
+    color: dimgray;
+}
+input[type=radio]:checked+label {
+    color: black;
+}
+
+.rowRed
+{
+   color: red;
+}
+
+.rowGreen
+{
+   color: green;
+}
+
+.rowGrey
+{
+   color: gray;
+}
+
+.summarydiv table 
+{
+    padding: 5px;
+    position: relative;
+    width: 90%;
+    z-index: 2;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.summaryHeading
+{
+   color: maroon;
+}
+
+.summaryData
+{
+   color: maroon;
+}
+
+.deprecatedText
+{
+   color: grey;
+}
+
+.carrierName
+{
+   color: darkgreen;
+}
+
+.hiddenTableRow
+{
+   display: none;
+}
+
+.notHiddenTableRow
+{
+   display: table-row;
+}
+
+.smallText
+{
+   font-size: 8pt;
+}
+
+.mediumText
+{
+   font-size: 11pt;
+}
+
+.sectionHeader
+{
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: start;
+    width: 90%;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: darkblue; 
+}
+
+.infoInputDiv
+{
+   position: relative;
+   width: 90%;
+   margin-left: 40px;
+   margin-top: 20px;
+}
+
+.cloudCommentRow table
+{
+   padding: 0px;
+}
+
+label.fakegreenButton input[type="file"] {
+   position: fixed;
+   top: -1000px;
+}
+
+.fakegreenButton
+{
+   background-color:lightgreen;
+   border-radius: 8px;
+   margin-right: 10px;  
+   border-width: 2px;
+   border-style: outset;
+   border-color: buttonface;
+   border-image: initial;
+   font: 13.3333px Arial;
+}
+.fakegreenButton:focus {
+  outline: none;
+}

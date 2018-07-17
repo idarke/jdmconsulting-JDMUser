@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+   <meta http-equiv="Pragma" content="no-cache" />
+   <meta http-equiv="Expires" content="timestamp" />
+   <link rel="stylesheet" type="text/css" href="styles/jdm.css">
+</head>
+
+<body>
+   <div class="headerdiv">
+      <div class="title">
+         <span id="headingTitle">JDM Users</span>
+      </div>   
+      <img src="images/JDMLogo.png" class="jdmlogo">
+   </div>   
+   
+   <div class="messagediv">
+      <div id="errorMessageDiv" class="errorMessages"></div><div id="niceMessageDiv" class="niceMessages"></div>
+   </div>
+   <div id="greyscreen" class="greyscreen"></div>
+   <div id="logindiv" class="logindiv" style="display:none">
+      <table id="loginTable"></table>      
+   </div> 
+      <div id="alertdiv" class="logindiv" style="display:none">
+      <table id="alertTable"></table>      
+   </div> 
+   
+   <div class="maindiv">
+      <table id="dataTable">
+         <tr class="headerRow">
+            <td class="headercellMiddle">UserName</td>
+            <td class="headercellMiddle">Password</td>
+            <td class="headercellMiddle">Full Name</td>
+            <td class="headercellMiddle">Application</td>
+            <td class="headercellMiddle">Role</td>
+            <td class="headercellEnd" colspan="2">Actions</td>
+         </tr>
+         <tr>
+            <td class="cellMiddle">
+               <input type="text" class="tableInputText" id="createUsername" />
+            </td>
+            <td class="cellMiddle">
+               <input type="text" class="tableInputText" id="createPassword" />
+            </td>  
+            <td class="cellMiddle">
+               <input type="text" class="tableInputText" id="createFullName" />
+            </td>  
+            <td class="cellMiddle">
+               <select id="createApp">
+               </select>
+            </td>  
+            <td class="cellMiddle">
+               <select id="createRole">
+                  <option value="U">User</option>
+                  <option value="A">Administrator</option>
+                  <option value="D">DRE</option>
+               </select>
+            </td>             
+            <td class="cellEnd" colspan="2">
+               <button class="greenButton" id="add~1" onclick="doButton(this)">Add</button>
+            </td>
+         </tr>         
+      </table>   
+   </div>
+   
+   <script src="lib\deployEnvironment.js"></script>
+   <script src="common.js"></script>
+   <script src="commonMessages.js"></script>   
+   <script src="lib\JDMApplications.js"></script>
+   <script src="lib\JDMAlert.js"></script>   
+   <script src="JDMUsers.js"></script>
+
+</body>

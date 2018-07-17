@@ -1,0 +1,5 @@
+#Lambda Function Project Metadata
+#Wed Oct 05 15:46:30 EDT 2016
+lastDeploymentFunctionName=MyTestFunction
+lastDeploymentBucketName=idarke-personal-temp
+lastDeploymentEndpoint=https\://lambda.us-east-1.amazonaws.com/
