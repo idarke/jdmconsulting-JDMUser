@@ -1,5 +1,7 @@
 package com.jdm.handler;
 
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +46,8 @@ public class IotHandler implements IHandler
       Common.context.getLogger().log("saveIot guid=" + iotSaveBean.getGuid());
       try
       {
+         iotSaveBean.setJson(URLDecoder.decode(iotSaveBean.getJson(),"UTF-8"));
+         
          IotSaveDao dao = new IotSaveDao();
          IotSaveBean oldbean = dao.getIotSaveBean(iotSaveBean.getGuid());
          if (oldbean == null)
@@ -82,6 +86,10 @@ public class IotHandler implements IHandler
       try
       {
          iotSaveBean = new IotSaveDao().getIotSaveBean(iotSaveBean.getGuid());
+         if (!iotSaveBean.getJson().startsWith("%7B"))
+         {
+            iotSaveBean.setJson(URLEncoder.encode(iotSaveBean.getJson(),"UTF-8"));
+         }
       }
       catch (Exception e)
       {
