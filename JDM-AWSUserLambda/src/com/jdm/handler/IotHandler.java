@@ -3,6 +3,7 @@ package com.jdm.handler;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -11,6 +12,7 @@ import com.jdm.beans.IotSaveBean;
 import com.jdm.common.Common;
 import com.jdm.dao.IotSaveDao;
 import com.jdm.exception.JDMException;
+import com.jdm.util.Zipper;
 
 public class IotHandler implements IHandler
 {
@@ -46,7 +48,11 @@ public class IotHandler implements IHandler
       Common.context.getLogger().log("saveIot guid=" + iotSaveBean.getGuid());
       try
       {
-         iotSaveBean.setJson(URLDecoder.decode(iotSaveBean.getJson(),"UTF-8"));
+         String rawjson = URLDecoder.decode(iotSaveBean.getJson(),"UTF-8");
+         Common.context.getLogger().log("Json length=" + rawjson.length());
+         byte[] bytes = Zipper.zip(rawjson);
+         iotSaveBean.setJson("BASE64"+Base64.getEncoder().encodeToString(bytes));
+         Common.context.getLogger().log("Final zipped length=" + iotSaveBean.getJson().length());
          
          IotSaveDao dao = new IotSaveDao();
          IotSaveBean oldbean = dao.getIotSaveBean(iotSaveBean.getGuid());
@@ -86,7 +92,18 @@ public class IotHandler implements IHandler
       try
       {
          iotSaveBean = new IotSaveDao().getIotSaveBean(iotSaveBean.getGuid());
-         if (!iotSaveBean.getJson().startsWith("%7B"))
+         
+         // Supporting 3 formats:
+         // 1)  Already url-encoded
+         // 2)  Plain text json (must be url-encoded)
+         // 3)  Base64 encoded zipped plain text (must de-based, unzipped, and url-encoded)
+         if (iotSaveBean.getJson().startsWith("BASE64"))
+         {
+            byte[] bytes = Base64.getDecoder().decode(iotSaveBean.getJson().substring(6));
+            String rawjson = Zipper.unzip(bytes);
+            iotSaveBean.setJson(URLEncoder.encode(rawjson,"UTF-8"));
+         }
+         else if (!iotSaveBean.getJson().startsWith("%7B"))
          {
             iotSaveBean.setJson(URLEncoder.encode(iotSaveBean.getJson(),"UTF-8"));
          }
