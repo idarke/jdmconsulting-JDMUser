@@ -32,7 +32,7 @@ body
 {
    position: absolute;
    top: 18px;
-   left: 144px;
+   left: 40px;
    font-style: italic;
 }
 
@@ -86,8 +86,8 @@ body
 
 .maindiv table .cellMiddle
 {
-    border-right: 1px solid #b22222;
-    border-bottom: 1px solid #b22222;
+  /*  border-right: 1px solid #b22222;
+    border-bottom: 1px solid #b22222;*/
 }
 
 .maindiv table .headercellEnd
@@ -97,7 +97,7 @@ body
 
 .maindiv table .cellEnd
 {
-    border-bottom: 1px solid #b22222;
+   /* border-bottom: 1px solid #b22222;*/
 }
 
 .maindiv table .headerRow

@@ -42,7 +42,8 @@ public class IotHandler implements IHandler
             throw new JDMException("1077","IoT action " + inputPayloadBean.getAction() + " not implemented");
       }
    }
-   
+
+
    private Object saveIot(IotSaveBean iotSaveBean)
    {
       Common.context.getLogger().log("saveIot guid=" + iotSaveBean.getGuid());
